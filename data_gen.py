@@ -1,12 +1,12 @@
 import fredapi
 import pandas as pd
 import numpy as np
+import pickle
 
-
-fred=fredapi.Fred(api_key_file="~/.fred_api_key")
+fred=fredapi.Fred(api_key_file=".fred_api_key") # You will need to register for this through st. louis fred.
 train_data=fred.get_series("UNRATE",observation_start="1960-01-01",observation_end="1997-01-01")
 test_data=fred.get_series("UNRATE",observation_start="1997-04-01",observation_end="2015-12-01")
-horiz=9
+horiz=0
 def make_data(x):
     x=x/100
     x=pd.DataFrame(x)
