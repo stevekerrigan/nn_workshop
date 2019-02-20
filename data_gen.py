@@ -19,7 +19,7 @@ def make_data(x):
             return x
     lags=pd.DataFrame()
     for i in range(0,36):
-        lags[i]=x[0].shift(i)
+        lags[i]=x.shift(i)
     fd=pd.DataFrame()
     sd=pd.DataFrame()
     ma=pd.DataFrame()
